@@ -90,7 +90,7 @@ def input_data(dir_list, numOfFile, encoding="utf-8"):
     for file_i in range(len(dir_list)):
         for iter in range(numOfFile):
             filename = os.getcwd() + '\\'+dir_list[file_i][0]+ '\\' + str(iter + 1) + '.txt'
-            temp = read_data(filename, "euc-kr", isSentence=1)
+            temp = read_data(filename, encoding, isSentence=1)
             temp = clean_text(temp)
             data[file_i].append(temp)
     return data
@@ -109,14 +109,14 @@ def make_wordvectors(filename, data, numOfFile):
         for EachFile in range(numOfFile):
             EachSentence = data[label][EachFile]
             ListOfWords = tokenize(EachSentence)
-            print(ListOfWords)
+            #print(ListOfWords)
             sentences.append(ListOfWords)
     model = word2vec.Word2Vec(sentences, min_count=1)
     model.save(filename)
 
-dir_list=[['ilbe'],['ou']]
-data = input_data(dir_list, 1000, "euc-kr" )
-make_wordvectors('ilbe_ou_word2vec_model',data, 1000)
+dir_list=[['normal'],['sadness']]
+data = input_data(dir_list, 2, "euc-kr" )
+make_wordvectors('ilbe_ou_word2vec_model',data, 2)
 
 
 
