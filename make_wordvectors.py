@@ -95,10 +95,8 @@ def input_data(dir_list, numOfFile, encoding="utf-8"):
             data[file_i].append(temp)
     return data
 
-#dir_list=[['normal'],['sadness']]
-#data = input_data(dir_list, 1000, "euc-kr" )
 
-def make_wordvectors(data, numOfFile):
+def make_wordvectors(filename, data, numOfFile):
     '''
     generating word2vec Model and save the corpus dictionary file
     if L:num of label, N:num of File
@@ -114,10 +112,11 @@ def make_wordvectors(data, numOfFile):
             print(ListOfWords)
             sentences.append(ListOfWords)
     model = word2vec.Word2Vec(sentences, min_count=1)
-    model.save('Model')
+    model.save(filename)
 
-
-
+dir_list=[['ilbe'],['ou']]
+data = input_data(dir_list, 1000, "euc-kr" )
+make_wordvectors('ilbe_ou_word2vec_model',data, 1000)
 
 
 
