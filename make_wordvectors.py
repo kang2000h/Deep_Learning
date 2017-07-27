@@ -114,10 +114,6 @@ def make_wordvectors(filename, data, numOfFile):
     model = word2vec.Word2Vec(sentences, min_count=1)
     model.save(filename)
 
-dir_list=[['normal'],['sadness']]
-data = input_data(dir_list, 2, "euc-kr" )
-make_wordvectors('ilbe_ou_word2vec_model',data, 2)
-
 
 
 
