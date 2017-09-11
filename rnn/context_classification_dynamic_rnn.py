@@ -28,6 +28,9 @@ print(sentences)
 model = word2vec.Word2Vec(sentences, min_count=1)
 model.init_sims(replace=True)
 
+#model.similarity(*tokenize(u'날씨 정말'))
+#print(model[tokenize('날씨')])
+
 #Reading data
 train_data = read_data('train_data.txt')
 

@@ -22,7 +22,6 @@ def TextToKorSpeechNAVER(Client_Id, Client_Secret, str, filename, extension='mp3
   else:
     print("Error Code:" + rescode)
 
-TextToKorSpeechNAVER('srFVyNJAeYqLjIGkFADD', '31umbSjPqD', '안녕하세요', '1111')
 
 #sudo pip install pyttsx - sounds like robotic
 '''import pyttsx
