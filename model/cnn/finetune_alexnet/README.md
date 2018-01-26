@@ -1,5 +1,5 @@
 
-We referred this source to conduct our experiment [Ref](https://github.com/kratzert/finetune_alexnet_with_tensorflow)
+We referred this source to conduct our experiment [Reference](https://github.com/kratzert/finetune_alexnet_with_tensorflow)
 
 # Finetune AlexNet with Tensorflow
 
